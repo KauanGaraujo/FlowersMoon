@@ -25,7 +25,7 @@ class FlowersController extends Controller
         Flowers::Create($flowers);
         return Redirect::route('index');
     }
-    public function showGerenciador(Request $request){
+    public function showManager(Request $request){
         $dados = Flowers::query();
         $dados->when($request->nameFlowers,function($query,$nome){
             $query->where('nameFlowers','like','%'.$nome.'%');
